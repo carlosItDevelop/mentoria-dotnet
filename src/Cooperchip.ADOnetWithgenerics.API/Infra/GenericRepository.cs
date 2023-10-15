@@ -41,6 +41,7 @@ namespace Cooperchip.ADOnetWithgenerics.API.Infra
             return result;
         }
 
+
         public async Task<T?> GetByIdAsync(int id)
         {
             T? result = null;
