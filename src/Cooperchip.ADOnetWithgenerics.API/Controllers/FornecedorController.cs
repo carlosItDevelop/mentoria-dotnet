@@ -1,5 +1,6 @@
 ﻿using Cooperchip.ADOnetWithgenerics.API.Infra;
 using Cooperchip.ADOnetWithgenerics.API.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cooperchip.ADOnetWithgenerics.API.Controllers
@@ -64,6 +65,7 @@ namespace Cooperchip.ADOnetWithgenerics.API.Controllers
         }
 
         [HttpDelete("{id:int}")]
+        [Authorize]
         public async Task<IActionResult> Delete(int id)
         {
             await _genericRepository.DeleteAsync(id);
